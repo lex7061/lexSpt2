@@ -1,0 +1,5 @@
+ __    ____  _  _
+(  )  ( ___)( \/ )
+ )(__  )__)  )  (       spt2Version: ${spring-boot.formatted-version}
+(____)(____)(_/\_)
+${AnsiColor.WHITE}

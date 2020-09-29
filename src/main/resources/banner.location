@@ -1,8 +1,0 @@
- __    ____  _  _ 
-(  )  ( ___)( \/ )
- )(__  )__)  )  ( 
-(____)(____)(_/\_)
-
-${AnsiColor.BRIGHT_BLUE}
-Application Version: ${application.version}${application.formatted-version}
-Spring Boot Version: ${spring-boot.version}${spring-boot.formatted-version}

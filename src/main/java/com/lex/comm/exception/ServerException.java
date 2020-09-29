@@ -1,13 +1,16 @@
 package com.lex.comm.exception;
 
 /**
- * 描述：自定义异常（服务异常）
- * 创建人：lxx
- * 创建时间：2020-09-17 13:34
+ * 描述：自定义异常，在业务处理过程中存在问题时抛出
+ * 创建人：lex
+ * 创建时间：2020-09-29 14:45
  * 更新人：
  * 更新时间：
  */
 public class ServerException extends RuntimeException {
+    public ServerException() {
+    }
+
     public ServerException(String message) {
         super(message);
     }

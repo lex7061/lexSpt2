@@ -8,6 +8,7 @@ class Spt2ApplicationTests {
 
     @Test
     void contextLoads() {
+        System.console();
     }
 
 }
