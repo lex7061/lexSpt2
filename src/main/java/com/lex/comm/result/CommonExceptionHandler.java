@@ -1,11 +1,10 @@
 package com.lex.comm.result;
 
+import cn.hutool.core.exceptions.ExceptionUtil;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
-import com.lex.comm.result.CommonErrorCode;
 import com.lex.comm.annotation.IgnoreResponseAdvice;
-import com.lex.comm.result.Result;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.BindException;
@@ -29,9 +28,6 @@ import java.util.List;
 
 /**
  * {@link RestControllerAdvice} 基础全局异常处理
- *
- * @author <a href="mailto:yaoonlyi@gmail.com">purgeyao</a>
- * @since 1.0.0
  */
 @RestControllerAdvice
 public class CommonExceptionHandler {
@@ -87,7 +83,7 @@ public class CommonExceptionHandler {
     public Result<Object> handleHttpMessageNotReadableException(HttpMessageNotReadableException e) throws Throwable {
         errorDispose(e);
         outPutError(HttpMessageNotReadableException.class, CommonErrorCode.PARAM_ERROR, e);
-        String msg = String.format("%s : 错误详情( %s )", CommonErrorCode.PARAM_ERROR.getMessage(), e.getRootCause().getMessage());
+        String msg = String.format("%s : 错误详情( %s )", CommonErrorCode.PARAM_ERROR.getMessage(), ExceptionUtil.getRootCauseMessage(e));
         return Result.ofFail(CommonErrorCode.PARAM_ERROR.getCode(), msg);
     }
 
